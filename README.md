@@ -1,3 +1,13 @@
+Fork of VDrift 
+==============
+
+This is CryHam's fork of VDrift.  
+It only has:
+- 1 car (3S) with few variants of speed, diffs, etc
+- different driving style - sliding mostly, AWD, like in StuntRally
+- few tracks - rather empty (without billboards, reduced etc.)
+- data dir is included already
+
 VDrift - A Car Racing Simulator for Multiple Platforms
 ======================================================
 
@@ -17,7 +27,6 @@ The goals of the VDrift project are:
 - to provide a platform for creative experimentation to a community of
   developers and artists.
 
-![](vdrift/raw/2f19c79de4fac0c326fa099dba7d9f19362552d0/miura_vdrift_899.jpg)
 
 Getting Started
 ---------------
