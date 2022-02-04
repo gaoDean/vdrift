@@ -188,16 +188,27 @@ top = 0.12
 height = 0.04
 
 
+[msg-box]
+image = white.png
+hue = 0.889
+sat = 0.068
+val = 0.173
+opacity = 0.25
+right = 0.05
+width = 0.16
+top = 0.16
+height = 0.038
+layer = -1
+
 [msg-txt]
 text = car.message
-fontsize = 0.05
-hue = 0
-sat = 1
-val = 1
-align = center
-right = 0
-left = 0
-top = 0.25
+fontsize = 0.035
+hue = 0.55
+sat = 0.46
+val = 0.97
+align = right
+right = 0.06
+top = 0.16
 height = 0.05
 
 
@@ -289,7 +300,10 @@ start-angle = -135
 end-angle = 135
 radius = 0.04
 image = pointer.png
-opacity = 0.8
+hue = 0.10
+sat = 0.85
+val = 0.99
+opacity = 0.99
 center-right = 0.05
 width = 0.2
 bottom = 0.03
@@ -337,7 +351,10 @@ start-angle = -135
 end-angle = 135
 radius = 0.04
 image = pointer.png
-opacity = 0.8
+hue = 0.15
+sat = 0.85
+val = 0.99
+opacity = 0.99
 center-left = 0.05
 width = 0.2
 bottom = 0.03
