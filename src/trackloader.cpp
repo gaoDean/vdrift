@@ -706,7 +706,10 @@ bool Track::Loader::AddObject(const Object & object)
 
 	std::shared_ptr<Texture> texture0, texture1, texture2;
 	{
-		content.load(texture0, objectdir, object.texture, texinfo);
+		if (!content.load(texture0, objectdir, object.texture, texinfo))
+		{
+			return true;  // don't create object if texture not present
+		}
 		data.textures.insert(texture0);
 	}
 	{
