@@ -29,7 +29,8 @@ opts.Add(BoolVariable('verbose', 'Show verbose compiling output', 1))
 cppdefines = []
 default_settingsdir = ".vdrift"
 default_prefix = "/usr/local"
-default_datadir = "share/games/vdrift/data"
+default_datadir = "data"
+#default_datadir = "share/games/vdrift/data"
 default_localedir = "share/locale"
 default_bindir = "bin"
 
@@ -224,7 +225,6 @@ def distcopy (target, source, env):
                         os.path.join( t, os.path.basename( s ) ) )
         else:
             env.Execute( Copy( t,  s ) )
-
 
     return
 
@@ -529,3 +529,7 @@ if 'autopackage' in COMMAND_LINE_TARGETS:
     os.system("CXX1=g++-3.4 CXX2=g++-4.1 APBUILD_CXX1=g++-3.4 APBUILD_NO_STATIC_X=1 VDRIFT_VERSION=%s VDRIFT_MINIMAL=%d VDRIFT_RELEASE=%d makepackage tools/autopackage/vdrift.apspec" % (version, env['minimal'], env['release']))
 
 SConscript('src/SConscript', variant_dir = build_dir, duplicate = 0)
+
+# copy exe from build/ to here
+os.system('cp build/vdrift .')
+#Copy( build_dir + '/vdrift',  './' )
