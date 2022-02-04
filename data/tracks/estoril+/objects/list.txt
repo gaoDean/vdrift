@@ -1503,7 +1503,7 @@ rmbl1.dds.png
 
 #entry 864
 trac0234_road2.dof-00.joe
-road2.dds.png
+road1.dds.png
 1
 0
 0
@@ -1777,7 +1777,7 @@ hillc.dds.png
 2.0
 0
 0
-0
+1
 1.0
 0.9
 1.0
@@ -1788,7 +1788,7 @@ hillc.dds.png
 
 #entry 885
 tree0235_road2.dof-00.joe
-road2.dds.png
+road1.dds.png
 1
 0
 0
