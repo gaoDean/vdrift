@@ -6,10 +6,10 @@ It only has:
 - **1 car**: 3S, with few variants of speed, diffs, etc.
 - *different* driving style
   - **sliding** mostly, AWD, like in [StuntRally](stuntrally.tuxfamily.org/)
-  - _note_: this is not asphalt only looks so, it's gravel, snow etc.
-- **few tracks** - quite empty
+  - _note_: it's not asphalt only now, becomes gravel, snow etc.
+- **12 tracks** - quite empty
   - reduced: no commercials, billboards, pits, buildings, people etc.
-  - terrain is drivable everywhere, no road walls
+  - terrain is drivable everywhere, no road walls, fences
   - some holes appear, because of missing objects
 - data dir is already included, with my modified files
 
