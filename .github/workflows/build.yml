@@ -19,6 +19,7 @@ jobs:
 
     - name: finish
       run: |
+        mv vdrift-mac/Frameworks/SDL2_image/Headers/SDL_image.h vdrift-mac/Frameworks/SDL2/Headers/
         cp -r vdrift-mac/Frameworks build/vdrift.app/Contents/
         cp vdrift-mac/Libraries/libiconv.2.dylib build/vdrift.app/Contents/Frameworks/
         cp vdrift-mac/Libraries/libintl.8.dylib build/vdrift.app/Contents/Frameworks/
