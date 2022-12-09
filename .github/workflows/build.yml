@@ -24,10 +24,10 @@ jobs:
 
     - name: finish
       run: |
+        cp -r data build/vdrift.app/Contents/Resources/
         cp -r vdrift-mac/Frameworks build/vdrift.app/Contents/
         cp vdrift-mac/Libraries/libiconv.2.dylib build/vdrift.app/Contents/Frameworks/
         cp vdrift-mac/Libraries/libintl.8.dylib build/vdrift.app/Contents/Frameworks/
-        cp data build/vdrift.app/Contents/Resources/
 
     - name: upload artifacts
       uses: actions/upload-artifact@v3
