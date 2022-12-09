@@ -14,10 +14,9 @@ env.Distribute (src_dir, ['SConscript'])
 Export(['env', 'src_dir', 'bin_dir'])
 
 if env['minimal']:
-    SConscript(dirs = ['3S'])
+    SConscript(dirs = ['AE86'])
 else:
     import glob
 
     for path in glob.glob('*/SConscript'):
         SConscript(path)
-
