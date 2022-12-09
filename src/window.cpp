@@ -251,7 +251,7 @@ void Window::ChangeDisplay(
 	}
 
 	// Create a new window
-	Uint32 window_flags = SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL;
+	Uint32 window_flags = SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL;
 	if (fullscreen)
 		window_flags |= SDL_WINDOW_FULLSCREEN;
 
