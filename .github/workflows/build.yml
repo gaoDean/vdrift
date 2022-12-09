@@ -20,7 +20,7 @@ jobs:
         cp -r vdrift-mac src/vdrift-mac
 
     - name: build
-      run: scons
+      run: scons release=1
 
     - name: finish
       run: |
