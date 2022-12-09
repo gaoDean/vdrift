@@ -1,19 +1,16 @@
-Fork of VDrift 
+Fork of VDrift
 ==============
 
-This is CryHam's fork of VDrift.  
-It only has:
-- **1 car**: 3S, with few variants of speed, diffs, etc.
-- *different* driving style
-  - **sliding** mostly, AWD, like in [StuntRally](stuntrally.tuxfamily.org/)
-  - _note_: it's not asphalt only now, becomes gravel, snow etc.
+This is gaoDean's fork of VDrift.
+- built for macos compilation
+- it's not asphalt only now, becomes gravel, snow etc.
 - **12 tracks** - quite empty
   - reduced: no commercials, billboards, pits, buildings, people etc.
   - terrain is drivable everywhere, no road walls, fences
   - some holes appear, because of missing objects
 - data dir is already included, with my modified files
 
-&nbsp;  
+&nbsp;
 
 ----
 
@@ -21,7 +18,7 @@ Below is original README of VDrift
 
 ----
 
-&nbsp;  
+&nbsp;
 
 
 VDrift - A Car Racing Simulator for Multiple Platforms
