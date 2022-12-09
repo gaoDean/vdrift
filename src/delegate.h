@@ -31,18 +31,20 @@ class Delegate
 public:
 	// Bind a function
 	template <R (*Function)(P...)>
-	constexpr void bind(void)
+	constexpr int bind(void)
 	{
 		m_inst = 0;
 		m_func = &callFunction<Function>;
+		return 0;
 	}
 
 	// Bind a class method
 	template <class C, R (C::*Function)(P...)>
-	constexpr void bind(C* inst)
+	constexpr int bind(C* inst)
 	{
 		m_inst = inst;
 		m_func = &callClassMethod<C, Function>;
+		return 0;
 	}
 
 	constexpr bool operator<(const Delegate<R, P...> & d) const

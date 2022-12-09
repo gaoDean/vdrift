@@ -265,4 +265,3 @@ if not sys.platform in ['win32', 'msys', 'cygwin']:
     wrapper = wrapper_build_env.SharedLibrary('vdrift', [src, "vdrift.i"])
 
     env.Alias("wrapper", wrapper)
-

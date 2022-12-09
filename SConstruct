@@ -20,7 +20,7 @@ opts.Add(BoolVariable('os_cxxflags', 'Set this to 1 if you want to use the opera
 opts.Add(BoolVariable('use_distcc', 'Set this to 1 to enable distributed compilation', 0))
 opts.Add(BoolVariable('profiling', 'Turn on profiling output', 0))
 opts.Add(BoolVariable('efficiency', 'Turn on compile-time efficiency warnings', 0))
-opts.Add(BoolVariable('verbose', 'Show verbose compiling output', 1)) 
+opts.Add(BoolVariable('verbose', 'Show verbose compiling output', 1))
 
 #--------------------------#
 # Create Build Environment #
@@ -64,8 +64,8 @@ if sys.platform in ['freebsd6', 'freebsd7', 'freebsd8', 'freebsd9', 'freebsd10']
 # OS X build #
 #------------#
 elif sys.platform == 'darwin':
-    opts.Add( ListVariable('universal', 
-            'the target architectures to include in a universal binary.', 
+    opts.Add( ListVariable('universal',
+            'the target architectures to include in a universal binary.',
             'none', ['ppc', 'i386']))
     opts.Add('SDK', 'the path to an SDK directory', '')
 
@@ -81,14 +81,14 @@ elif sys.platform == 'darwin':
     # Setup universal binary support
     sdkfile = 'SDKSettings.plist'
     sdk_path = None
-    
+
     if env['SDK']:
         sdk_path = FindFile( sdkfile, env['SDK'] )
     else:
         # check some reasonable locations
         sdk_path = FindFile( sdkfile,
-            [ '/Developer/SDKs/MacOSX%s.sdk' % x for x in 
-                [ '10.5', '10.4u' ] ] ) 
+            [ '/Developer/SDKs/MacOSX%s.sdk' % x for x in
+                [ '10.5', '10.4u' ] ] )
 
     for a in env['universal']:
         if not sdk_path:
@@ -100,8 +100,8 @@ elif sys.platform == 'darwin':
 
     if (len(env['universal']) and sdk_path):
         from os.path import dirname
-        sdk_path = dirname( str( sdk_path ) ) 
-        env.Append( CCFLAGS = ['-isysroot', sdk_path], 
+        sdk_path = dirname( str( sdk_path ) )
+        env.Append( CCFLAGS = ['-isysroot', sdk_path],
             LINKFLAGS = ['-Wl,-syslibroot,%s' % sdk_path] )
 
     # Configure reasonable defaults
@@ -163,7 +163,7 @@ if ARGUMENTS.get('verbose') != "1":
 opts.Add('settings', 'Directory under user\'s home dir where settings will be stored', default_settingsdir )
 opts.Add('prefix', 'Path prefix.', default_prefix)
 # in most case datadir doesn't exsist => do not use PathOption (Fails on build)
-opts.Add('datadir', 'Path suffix where where VDrift data will be installed', default_datadir) 
+opts.Add('datadir', 'Path suffix where where VDrift data will be installed', default_datadir)
 opts.Add('localedir', 'Path where VDrift locale will be installed', default_localedir)
 opts.Add('bindir', 'Path suffix where VDrift binary executable will be installed', default_bindir)
 
@@ -190,10 +190,10 @@ def distfile( src_root, file ):
     return path
 
 def distemit (target, source, env ):
-    treedir = str ( target[0] ) 
+    treedir = str ( target[0] )
     src_root = ''
     if ( len( target ) > 1 ): src_root = target[1].path
-    target = [ os.path.join( treedir, distfile( src_root, f ) ) 
+    target = [ os.path.join( treedir, distfile( src_root, f ) )
                 for f in source ]
 
     # Links of all types must be omitted because scons doesn't
@@ -216,19 +216,19 @@ def distcopy (target, source, env):
 
     for t, s in zip( target, source ):
         t = os.path.dirname( str( t ) )
-        if not os.path.exists( t ): 
+        if not os.path.exists( t ):
             env.Execute( Mkdir( t ) )
         s = str( s )
-        if ( os.path.islink( s ) and 
+        if ( os.path.islink( s ) and
                 not os.path.isabs( os.readlink( s ) ) ):
-            os.symlink( os.readlink( s ), 
+            os.symlink( os.readlink( s ),
                         os.path.join( t, os.path.basename( s ) ) )
         else:
             env.Execute( Copy( t,  s ) )
 
     return
 
-def tarballer (target, source, env):            
+def tarballer (target, source, env):
     cmd = 'tar -jcf "%s" -C "%s" .'  % ( str(target[0]), str(source[0]) )
     #cmd = 'tar -jcf ' + str (target[0]) +  ' ' + str(source[0]) + "  --exclude '*~' "
     print('running ', cmd, ' ... ')
@@ -268,8 +268,8 @@ env.Append (BUILDERS = {'Tarball' : tarball_bld})
 #--------------------------------------------------#
 def exportvisit( srcfiles, dirname, entries):
     from os.path import join, isdir, islink
-    
-    srcfiles.extend( [ File( join( dirname, e ) ) for e in entries 
+
+    srcfiles.extend( [ File( join( dirname, e ) ) for e in entries
             if not isdir( join( dirname, e ) ) ] )
     srcfiles.extend( [ Dir( join( dirname, e ) ) for e in entries
             if islink( join(dirname, e ) ) and isdir( join( dirname, e ) ) ] )
@@ -279,7 +279,7 @@ def exportemit (target, source, env ):
     target.append( Dir( os.path.dirname( source_str ) ) )
     if ( os.path.isdir( source_str ) ):
         source = []
-        os.path.walk( source_str, exportvisit, source )
+        os.walk( source_str, exportvisit, source )
 
     return distemit( target, source, env )
 
@@ -310,10 +310,10 @@ env.Append (BUILDERS = {'TarCopy' : copy_tar_dir})
 #------------------------------------------------------------------------#
 def process_template(target, source, env):
     for tgt, src in zip(  target, source ):
-        file( str( tgt ), "w+" ).write( 
-            env.subst( file( str( src ) ).read(), raw=1 ) )
+        open( str( tgt ), "w+" ).write(
+            env.subst( open( str( src ) ).read(), raw=1 ) )
 
-env.Append (BUILDERS = 
+env.Append (BUILDERS =
     {'ProcessTemplate': Builder(action = process_template ) })
 
 #------------#
@@ -350,7 +350,7 @@ Type: 'scons' to compile with the default options.
       'scons use_distcc=1' to use distributed compilation
       'scons efficiency=1' to show efficiency assessment at compile time
       'scons profiling=1' to enable profiling support
-%s 
+%s
 
 Note: The options you enter will be saved in the file vdrift.conf and they will be the defaults which are used every subsequent time you run scons.""" % opts.GenerateHelpText(env))
 
@@ -511,7 +511,7 @@ env.Alias(target = 'bin-package', source = bin_archive)
 Export(['env', 'version', 'src_dir', 'bin_dir'])
 if 'install' in COMMAND_LINE_TARGETS:
     if not os.path.isfile('data/SConscript'):
-        raise 'VDrift data not found. Please make sure data is placed in vdrift directory. See README.md and http://wiki.vdrift.net.' 
+        raise 'VDrift data not found. Please make sure data is placed in vdrift directory. See README.md and http://wiki.vdrift.net.'
     SConscript('data/SConscript')
     # desktop appdata installation
     install_desktop = env.Install(env['destdir'] + env['prefix'] + '/share/applications', 'vdrift.desktop')

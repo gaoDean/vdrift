@@ -161,7 +161,7 @@ solution "VDrift"
 		defines {"HAVE_LIBC"} --SDL2
 		includedirs {"vdrift-win/include", "vdrift-win/bullet"}
 		libdirs {"vdrift-win/lib"}
-		links {"opengl32", "SDL2main", "SDL2", "SDL2_image", "vorbisfile", "iconv2", "intl", "curl", "wsock32", "ws2_32"}
+		links {"opengl32", "SDL2main", "SDL2", "vorbisfile", "iconv2", "intl", "curl", "wsock32", "ws2_32"}
 		files {"vdrift-win/bullet/**.h", "vdrift-win/bullet/**.cpp"}
 		postbuildcommands {"xcopy /d /y /f .\\vdrift-win\\lib\\*.dll .\\"}
 
