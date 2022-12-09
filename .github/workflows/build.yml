@@ -11,7 +11,7 @@ jobs:
 
     - name: install dependencies
       run: |
-        brew install scons bullet
+        brew install scons bullet sdl2 sdl2_image
         git clone https://github.com/VDrift/vdrift-mac.git
 
     - name: build
