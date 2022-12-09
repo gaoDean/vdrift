@@ -16,7 +16,7 @@ jobs:
 
     - name: setup
       run: |
-        mv vdrift-mac/Frameworks/SDL2_image/Headers/SDL_image.h vdrift-mac/Frameworks/SDL2/Headers/
+        mv vdrift-mac/Frameworks/SDL2_image.framework/Headers/SDL_image.h vdrift-mac/Frameworks/SDL2.framework/Headers/
 
     - name: build
       run: scons
