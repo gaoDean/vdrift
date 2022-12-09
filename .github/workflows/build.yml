@@ -3,15 +3,30 @@ name: VDrift
 on: [push, pull_request]
 
 jobs:
-  test_Ubuntu:
+  build:
 
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - name: install_dependencies
+    - uses: actions/checkout@v3
+
+    - name: install dependencies
       run: |
-        sudo apt-get update -y -qq
-        sudo apt-get install scons libsdl2-dev libsdl2-image-dev libbullet-dev libvorbis-dev libcurl4-gnutls-dev
-    - name: Build
+        brew install scons
+        git clone https://github.com/VDrift/vdrift-mac.git
+
+    - name: build
       run: scons
+
+    - name: finish
+      run: |
+        cp -r vdrift-mac/Frameworks build/vdrift.app/Contents/
+        cp vdrift-mac/Libraries/libiconv.2.dylib build/vdrift.app/Contents/Frameworks/
+        cp vdrift-mac/Libraries/libintl.8.dylib build/vdrift.app/Contents/Frameworks/
+        cp data build/vdrift.app/Contents/Resources/
+
+    - name: upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: vdrift.app
+        path: build/vdrift.app
