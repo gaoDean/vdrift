@@ -2,7 +2,7 @@ Fork of VDrift
 ==============
 
 This is gaoDean's fork of VDrift.
-- built for macos compilation
+- built for macos compilation with `scons`
 - it's not asphalt only now, becomes gravel, snow etc.
 - **12 tracks** - quite empty
   - reduced: no commercials, billboards, pits, buildings, people etc.
