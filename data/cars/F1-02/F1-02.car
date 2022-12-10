@@ -72,7 +72,7 @@ gear-ratio-4 = 2.60
 gear-ratio-5 = 2.30
 gear-ratio-6 = 2.05
 gear-ratio-7 = 1.90
-shift-time = 0.05
+shift-time = 0.3
 
 [differential-rear]
 #final-drive = 4.0	# max ca 320 km/h (final-drive = 4.0)

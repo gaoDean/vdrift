@@ -50,7 +50,7 @@ gear-ratio-3 = 1.481
 gear-ratio-4 = 1.161
 gear-ratio-5 = 0.943
 gear-ratio-6 = 0.763
-shift-time = 0.08
+shift-time = 0.3
 
 [differential-rear]
 final-drive = 4.9528	# 4.100 * 1.208 final drive plus secondary gear reduction
