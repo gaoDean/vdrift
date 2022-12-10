@@ -74,7 +74,7 @@ elif sys.platform == 'darwin':
         CCFLAGS = ['-std=c++14', '-Wall', '-Wextra'],
         CXXFLAGS = Split("$CCFLAGS -Wno-non-virtual-dtor -Wunused-parameter"),
         LIBPATH = ['.'],
-        FRAMEWORKPATH = ['vdrift-mac/Frameworks/'],
+        FRAMEWORKPATH = ['../vdrift-mac/Frameworks/'],
         FRAMEWORKS = [ 'OpenGL' ],
         options = opts)
 
