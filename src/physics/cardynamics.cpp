@@ -1033,14 +1033,14 @@ btScalar CarDynamics::GetBrakeDistance(btScalar initial_speed, btScalar final_sp
 std::vector<float> CarDynamics::GetSpecs() const
 {
 	return std::vector<float>{
-		maxspeed,
-		float(int(drive)),
-		engine.GetDisplacement(),
-		engine.GetMaxPower(),
-		engine.GetMaxTorque(),
-		1 / body->getInvMass(),
-		CalculateFrontMassRatio(),
-		CalculateGripBalance()
+		(float) maxspeed,
+		(float) int(drive),
+		(float) engine.GetDisplacement(),
+		(float) engine.GetMaxPower(),
+		(float) engine.GetMaxTorque(),
+		(float) (1 / body->getInvMass()),
+		(float) CalculateFrontMassRatio(),
+		(float) CalculateGripBalance()
 	};
 }
 
