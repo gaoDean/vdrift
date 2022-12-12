@@ -44,7 +44,14 @@ void DynamicsDraw::drawLine(
 	const btVector3& to,
 	const btVector3& /*color*/)
 {
-	float verts[6] = {from.x(), from.y(), from.z(), to.x(), to.y(), to.z()};
+	float verts[6] = {
+		(float) from.x(),
+		(float) from.y(),
+		(float) from.z(),
+		(float) to.x(),
+		(float) to.y(),
+		(float) to.z()
+	};
 	m_shapes.Add(0, 0, verts, 6);
 }
 
@@ -58,7 +65,14 @@ void DynamicsDraw::drawContactPoint(
 	btVector3 from = pointOnB;
 	btVector3 to = pointOnB + normalOnB;
 
-	float verts[6] = {from.x(), from.y(), from.z(), to.x(), to.y(), to.z()};
+	float verts[6] = {
+		(float) from.x(),
+		(float) from.y(),
+		(float) from.z(),
+		(float) to.x(),
+		(float) to.y(),
+		(float) to.z()
+	};
 	m_contacts.Add(0, 0, verts, 6);
 }
 

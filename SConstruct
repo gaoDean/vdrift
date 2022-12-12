@@ -71,7 +71,7 @@ elif sys.platform == 'darwin':
 
     env = Environment(ENV = os.environ,
         CPPPATH = ['#src', '#vdrift-mac/Frameworks', '#vdrift-mac/Frameworks/SDL2.framework/Headers', '#vdrift-mac/Libraries'],
-        CCFLAGS = ['-std=c++14', '-Wall', '-Wextra'],
+        CCFLAGS = ['-std=c++14', '-Wall', '-Wextra', '-DBT_USE_DOUBLE_PRECISION'],
         CXXFLAGS = Split("$CCFLAGS -Wno-non-virtual-dtor -Wunused-parameter"),
         LIBPATH = ['.'],
         FRAMEWORKPATH = ['vdrift-mac/Frameworks/'],
