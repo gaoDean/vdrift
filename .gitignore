@@ -12,6 +12,7 @@ src/definitions.h
 Makefile
 obj
 build
+data
 
 #data
 vdrift*
