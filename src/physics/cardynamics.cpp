@@ -1830,6 +1830,11 @@ void CarDynamics::RolloverRecover()
 	body->setCenterOfMassTransform(transform);
 
 	AlignWithGround();
+
+	// increase z of the car to not get stuck in road
+	btVector3 delta = GetDownVector() * -0.75;
+	btVector3 position = transform.getOrigin() + delta;
+	SetPosition(position);
 }
 
 void CarDynamics::Clear()
