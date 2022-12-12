@@ -1,24 +1,16 @@
-Fork of VDrift
-==============
+# My fork of VDrift
 
-This is gaoDean's fork of VDrift.
+- fixes some things
 - built for macos compilation with `scons`
 - data dir is already included, with my modified files
 - `data/tracks` will need to be imported with from `svn checkout svn://svn.code.sf.net/p/vdrift/code/ vdrift-code`
 
-&nbsp;
-
-----
-
-Below is original README of VDrift
-
-----
+Below is original README of VDrift:
 
 &nbsp;
 
 
-VDrift - A Car Racing Simulator for Multiple Platforms
-======================================================
+## VDrift - A Car Racing Simulator for Multiple Platforms
 
 VDrift is a cross-platform, open source driving simulation made with drift
 racing in mind. It is released under the [GNU General Public License (GPL) v3](http://www.gnu.org/licenses/gpl-3.0.en.html).
