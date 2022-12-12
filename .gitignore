@@ -11,7 +11,7 @@
 src/definitions.h
 obj
 build
-data
+data/tracks
 
 #data
 vdrift*

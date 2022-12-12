@@ -3,12 +3,8 @@ Fork of VDrift
 
 This is gaoDean's fork of VDrift.
 - built for macos compilation with `scons`
-- it's not asphalt only now, becomes gravel, snow etc.
-- **12 tracks** - quite empty
-  - reduced: no commercials, billboards, pits, buildings, people etc.
-  - terrain is drivable everywhere, no road walls, fences
-  - some holes appear, because of missing objects
 - data dir is already included, with my modified files
+- `data/tracks` will need to be imported with from `svn checkout svn://svn.code.sf.net/p/vdrift/code/ vdrift-code`
 
 &nbsp;
 
