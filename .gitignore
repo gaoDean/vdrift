@@ -9,7 +9,6 @@
 .sconsign.dblite
 
 src/definitions.h
-Makefile
 obj
 build
 data
